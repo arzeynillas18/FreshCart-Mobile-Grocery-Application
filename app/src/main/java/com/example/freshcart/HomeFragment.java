@@ -35,13 +35,13 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
 
     private void loadProducts() {
         productList = new ArrayList<>();
-        productList.add(new Product(1, "Fresh Apples", 4.99, "Fruits", R.drawable.apple));
-        productList.add(new Product(2, "Bananas", 2.99, "Fruits", R.drawable.banana));
-        productList.add(new Product(3, "Milk", 3.99, "Dairy", R.drawable.milk));
-        productList.add(new Product(4, "Bread", 2.49, "Bakery", R.drawable.bread));
-        productList.add(new Product(5, "Eggs", 5.99, "Dairy", R.drawable.eggs));
-        productList.add(new Product(6, "Chicken", 8.99, "Meat", R.drawable.chicken));
-        productList.add(new Product(7, "Tomato", 8.99, "Vegetables", R.drawable.tomato));
+        productList.add(new Product(1, "Fresh Apples", 12, "Fruits", R.drawable.apple));
+        productList.add(new Product(2, "Bananas", 7, "Fruits", R.drawable.banana));
+        productList.add(new Product(3, "Milk", 45, "Dairy", R.drawable.milk));
+        productList.add(new Product(4, "Bread", 40, "Bakery", R.drawable.bread));
+        productList.add(new Product(5, "Eggs", 9, "Dairy", R.drawable.eggs));
+        productList.add(new Product(6, "Chicken", 150, "Meat", R.drawable.chicken));
+        productList.add(new Product(7, "Tomato", 8, "Vegetables", R.drawable.tomato));
     }
 
     @Override

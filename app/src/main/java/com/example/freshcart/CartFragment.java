@@ -56,7 +56,7 @@ public class CartFragment extends Fragment implements CartAdapter.OnCartItemUpda
     }
 
     private void updateTotal() {
-        totalText.setText(String.format(Locale.getDefault(), "Total: $%.2f", cartManager.getTotal()));
+        totalText.setText(String.format(Locale.getDefault(), "Total: ₱%.2f", cartManager.getTotal()));
     }
 
     private void processCheckout() {

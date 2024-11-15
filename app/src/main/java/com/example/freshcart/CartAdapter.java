@@ -66,7 +66,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         void bind(final CartItem cartItem) {
             Product product = cartItem.getProduct();
             nameText.setText(product.getName());
-            priceText.setText(String.format(Locale.getDefault(), "$%.2f", product.getPrice()));
+            priceText.setText(String.format(Locale.getDefault(), "₱%.2f", product.getPrice()));
             imageView.setImageResource(product.getImageResourceId());
             quantityText.setText(String.valueOf(cartItem.getQuantity()));
 

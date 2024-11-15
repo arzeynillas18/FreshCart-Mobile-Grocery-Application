@@ -30,14 +30,14 @@ public class ProfileFragment extends Fragment {
         db = FirebaseFirestore.getInstance();
 
         if (mAuth.getCurrentUser() == null) {
-            // If the user is not logged in, redirect to login screen
+
             startActivity(new Intent(getActivity(), LoginActivity.class)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
             return view; // Return early
         }
 
         initializeViews(view);
-        setProfileInfo();  // No need to pass the view as a parameter
+        setProfileInfo();
         setLogoutListener();
 
         return view;

@@ -62,7 +62,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         void bind(@NonNull Product product) {
             nameText.setText(product.getName());
-            priceText.setText(String.format(Locale.getDefault(), "$%.2f", product.getPrice()));
+            priceText.setText(String.format(Locale.getDefault(), "₱%.2f", product.getPrice()));
             imageView.setImageResource(product.getImageResourceId());
             addToCartButton.setOnClickListener(v -> listener.onAddToCartClick(product));
         }
