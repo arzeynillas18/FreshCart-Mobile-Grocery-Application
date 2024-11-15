@@ -17,6 +17,9 @@ FreshCart is an Android-based mobile application designed to streamline the proc
 ## Screenshots
 
 ![Login Screen [image](https://github.com/user-attachments/assets/0940efdc-31f6-46ae-848b-d003334fa2a1)
+![Registration Screen  ![image](https://github.com/user-attachments/assets/7599f8d9-34ef-4812-8f00-620b853f5c2b)
+![Main Menu Screen  ![image](https://github.com/user-attachments/assets/cba8cfce-1e04-47bc-9c0a-efd3e97e82d0)
+
 
 
 ## Installation
