@@ -1,5 +1,6 @@
 package com.example.freshcart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class CartFragment extends Fragment implements CartAdapter.OnCartItemUpdateListener {
     private RecyclerView recyclerView;
@@ -65,10 +71,34 @@ public class CartFragment extends Fragment implements CartAdapter.OnCartItemUpda
             return;
         }
 
-        showToast("Order placed successfully!");
-        cartManager.clearCart();
-        adapter.notifyDataSetChanged();
-        updateTotal();
+        saveOrderToDatabase();
+    }
+
+    private void saveOrderToDatabase() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+
+        String userId = auth.getCurrentUser().getUid();
+
+        // Create an order object
+        Map<String, Object> order = new HashMap<>();
+        order.put("userId", userId);
+        order.put("items", cartManager.getCartItems()); // Ensure CartManager returns a list of items
+        order.put("total", cartManager.getTotal());
+        order.put("timestamp", System.currentTimeMillis());
+
+        db.collection("orders")
+                .add(order)
+                .addOnSuccessListener(documentReference -> {
+                    showToast("Order placed successfully!");
+                    cartManager.clearCart();
+                    adapter.notifyDataSetChanged();
+                    updateTotal();
+
+                    // Redirect to OrdersActivity
+                    startActivity(new Intent(getActivity(), MyOrdersActivity.class));
+                })
+                .addOnFailureListener(e -> showToast("Failed to place order. Try again."));
     }
 
     private void showToast(String message) {

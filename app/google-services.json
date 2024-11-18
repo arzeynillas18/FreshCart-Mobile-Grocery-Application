@@ -12,7 +12,20 @@
           "package_name": "com.example.freshcart"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "915535315927-vi25j3rhgdcetkn6b7fcu9gie31ketr1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.freshcart",
+            "certificate_hash": "2027405686df76e7945fbbb16140bce2ef12110f"
+          }
+        },
+        {
+          "client_id": "915535315927-vkmm3cln0lhcg9p5k9noold4ibm96alg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDaVYk4zplj_1lPMbanLkIbCUngu__kdD4"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915535315927-vkmm3cln0lhcg9p5k9noold4ibm96alg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

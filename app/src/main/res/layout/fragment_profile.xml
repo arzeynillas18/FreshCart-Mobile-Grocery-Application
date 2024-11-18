@@ -3,51 +3,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile"
-        android:textSize="24sp"
-        android:textStyle="bold"
+    <!-- Profile Picture Placeholder -->
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/profile_placeholder"
+        android:contentDescription="Profile Picture"
         android:layout_marginBottom="16dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- Name and Email -->
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="16dp">
-
-        <ImageView
-            android:id="@+id/profile_image"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:src="@drawable/profile_placeholder"
-            android:contentDescription="Profile Picture" />
-
-        <TextView
-            android:id="@+id/text_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="16dp"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+        android:text="Name"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp" />
 
     <TextView
         android:id="@+id/text_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:textSize="16sp" />
+        android:text="Email"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Action Buttons -->
+    <Button
+        android:id="@+id/button_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/button_my_orders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Orders"
+        android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/button_logout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logout" />
-
+        android:text="Logout"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/black" />
 </LinearLayout>
